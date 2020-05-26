@@ -9,8 +9,9 @@
 function OvigloAlert()
 {
     this.lang = navigator.language || navigator.userLanguage; // Get browser language for buttons
+    this.lang = this.lang.substring(0, 2);
     this.translations = {
-        "en-EN": {
+        "en": {
             "ok": "OK",
             "cancel": "Cancel",
             "yes": "Yes",
@@ -20,7 +21,7 @@ function OvigloAlert()
             "ignore": "Ignore"
 
         },
-        "fr-FR": {
+        "fr": {
             "ok": "OK",
             "cancel": "Annuler",
             "yes": "Oui",
@@ -31,6 +32,10 @@ function OvigloAlert()
 
         },
     };
+    if (typeof this.translation[this.lang] == "undefined") {
+        this.lang = "fr";
+    }
+    
     this.alert = null;
     this.isShow = false;
     this.buttons = [];
