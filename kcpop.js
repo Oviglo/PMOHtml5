@@ -32,7 +32,7 @@ function OvigloAlert()
 
         },
     };
-    if (typeof this.translation[this.lang] == "undefined") {
+    if (typeof this.translations[this.lang] == "undefined") {
         this.lang = "fr";
     }
     
